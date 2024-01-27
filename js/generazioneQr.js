@@ -1,5 +1,5 @@
 function generateQRCode() {
-  var textToEncode = "http://127.0.0.1:5500/index.html";
+  var textToEncode = "https://perri-alessandro.github.io/QR-CODE-PAGE-ZIO/";
 
   // Configurazioni opzionali
   var options = {
