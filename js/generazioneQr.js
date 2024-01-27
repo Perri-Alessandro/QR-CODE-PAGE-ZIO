@@ -13,6 +13,7 @@ function generateQRCode() {
   // Creazione del QR code
   var qrcode = new QRCode(document.getElementById("qrcode"), options);
   qrcode.makeCode(textToEncode);
+  console.log("OGGETTO QR CODE GENERATO", qrcode);
 }
 
 function downloadQRCode() {
@@ -41,6 +42,7 @@ function downloadQRCode() {
   document.body.appendChild(downloadLink);
   downloadLink.click();
   document.body.removeChild(downloadLink);
+  console.log("QR CODE SCARICATO", downloadLink);
 }
 
 // Chiamata alla funzione per generare il QR code al caricamento della pagina
