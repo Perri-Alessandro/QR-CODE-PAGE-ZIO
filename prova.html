@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-svg@1.0.0/dist/qrcode.min.js"></script>
+    <title>QR Code in SVG</title>
+  </head>
+  <body>
+    <div id="qrcode-container"></div>
+
+    <script>
+      // Testo o dati che desideri incorporare nel QR code
+      var qrText = "Hello, World!";
+
+      // Creazione di un nuovo oggetto QRCode
+      var qrcode = new QRCode(document.getElementById("qrcode-container"), {
+        content: qrText,
+        padding: 4,
+        width: 128,
+        height: 128,
+        color: "#000000",
+        background: "#ffffff",
+      });
+
+      // Ottieni l'elemento SVG generato
+      var svgElement = document.querySelector("#qrcode-container svg");
+
+      // Aggiungi un pulsante per scaricare l'immagine SVG
+      var downloadButton = document.createElement("a");
+      downloadButton.href =
+        "data:image/svg+xml," +
+        encodeURIComponent(new XMLSerializer().serializeToString(svgElement));
+      downloadButton.download = "qrcode.svg";
+      downloadButton.textContent = "Download SVG";
+
+      // Aggiungi il pulsante alla pagina
+      document.body.appendChild(downloadButton);
+    </script>
+  </body>
+</html>
