@@ -1,7 +1,7 @@
 // let annoCorrente = new Date().getFullYear();
 // let eccolo = (document.getElementById("anno").textContent = annoCorrente);
 
-///////////////////////////// AUDIO PLAYER
+///////////////////////////// Audio player
 document.addEventListener("DOMContentLoaded", function () {
   const playButton = document.getElementById("playButton");
   const pauseButton = document.getElementById("pauseButton");
@@ -57,13 +57,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const formattedTime = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
     return formattedTime;
   }
-});
 
-progressBar.addEventListener("click", function (event) {
-  const barWidth = progressBar.clientWidth;
-  const clickX = event.clientX - progressBar.getBoundingClientRect().left;
-  const percentage = (clickX / barWidth) * 100;
+  progressBar.addEventListener("click", function (event) {
+    const barWidth = progressBar.clientWidth;
+    const clickX = event.clientX - progressBar.getBoundingClientRect().left;
+    const percentage = (clickX / barWidth) * 100;
 
-  // Aggiorna il progresso della canzone
-  audioPlayer.currentTime = (percentage / 100) * audioPlayer.duration;
+    // Aggiorna il progresso della canzone
+    audioPlayer.currentTime = (percentage / 100) * audioPlayer.duration;
+  });
+
+  const rewindButton = document.querySelector(".bi-arrow-clockwise");
+  rewindButton.addEventListener("click", function () {
+    // Riavvolgi la canzone
+    audioPlayer.currentTime = 0;
+
+    updateProgressBarThumb(0);
+  });
 });
+/////////////
