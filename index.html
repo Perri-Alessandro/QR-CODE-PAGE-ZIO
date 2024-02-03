@@ -19,26 +19,19 @@
   </head>
   <body class="bg-black">
     <header>
-      <h1 class="text-center text-white mt-4">
-        <strong>Cataldo Perri</strong>
-      </h1>
-    </header>
-    <main class="container img-fluid" id="bgImg">
-      <h2 class="mt-5 text-white row justify-content-center">
+      <h1 class="mt-5 text-white row justify-content-center">
         BACIALA QUESTA TERRA
-      </h2>
-      <h4 class="text-white row justify-content-center">Bastimenti</h4>
-      <p class="mt-4 row text-white text-center fs-5 mx-4 px-4 mx-sm-5 px-sm-5">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sint
-        explicabo, nesciunt ex inventore officiis fuga numquam ratione modi
-        culpa repudiandae illum deserunt minus, cum quas consectetur harum,
-        aperiam similique.<span class="d-none d-sm-flex"
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia eius
-          eos fugit officia iure cum nihil at perspiciatis pariatur animi
-          veritatis harum voluptas, unde soluta minus corrupti laborum
-          blanditiis qui.</span
+      </h1>
+      <h4 class="text-white row justify-content-center mt-2">da Bastimenti</h4>
+      <h4 class="row text-center text-white mt-2">
+        <a
+          href="https://open.spotify.com/intl-it/artist/72UWmHkB8Sqz21DzFvA2A9?si=0BygFU8JSFeyDXiV4CGpsg"
+          target="_blank"
+          ><strong>di Cataldo Perri</strong></a
         >
-      </p>
+      </h4>
+    </header>
+    <main class="container img" id="bgImg">
       <!-- <div
         class="row flex-column flex-md-row align-items-center justify-content-center justify-content-md-between mt-5"
       >
@@ -58,6 +51,18 @@
 
       <div class="row py-4 fixed-bottom mb-5">
         <div class="col">
+          <div class="row justify-content-center">
+            <input
+              type="range"
+              id="volumeSlider"
+              min="0"
+              max="1"
+              step="0.01"
+              value="1"
+              hidden
+              class="col-3 px-0 mb-2"
+            />
+          </div>
           <div
             class="row text-white align-items-center justify-content-center mb-3"
           >
@@ -117,6 +122,7 @@
               fill="currentColor"
               class="col-2 bi bi-volume-up px-0"
               viewBox="0 0 16 16"
+              id="volumeIcon"
             >
               <path
                 d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z"

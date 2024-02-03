@@ -1,16 +1,26 @@
 @charset "UTF-8";
 svg,
-.progress-bar {
+.progress-bar,
+a {
   cursor: pointer;
 }
 
+header > h4 > a, header > .h4 > a {
+  color: white;
+  transition: transform 0.4s ease;
+}
+header > h4 > a:hover, header > .h4 > a:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
 #bgImg {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgb(0, 0, 0)), linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)), url("https://images.pexels.com/photos/3714523/pexels-photo-3714523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  background-size: cover;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%), url("/assets/image/IMG-20240203-WA0016.jpg");
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 1000px;
-  height: 600px;
+  max-width: 900px;
+  height: 500px;
 }
 
 .col-8.progress.rounded-5 {
@@ -21,7 +31,6 @@ svg,
   background-color: green;
   position: relative;
 }
-
 #progress::after {
   content: "";
   display: block;

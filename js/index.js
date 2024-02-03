@@ -9,10 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const progress = document.getElementById("progress");
   const currentTime = document.getElementById("currentTime");
   const totalTime = document.getElementById("totalTime");
+  const audioPlayer = document.getElementById("audioPlayer");
+  const volumeSlider = document.getElementById("volumeSlider");
+  const volumeIcon = document.getElementById("volumeIcon");
 
   pauseButton.classList.add("d-none");
 
   let isPlaying = false;
+
+  volumeIcon.addEventListener("click", function () {
+    volumeSlider.hidden = !volumeSlider.hidden;
+  });
+
+  volumeSlider.addEventListener("input", function () {
+    audioPlayer.volume = volumeSlider.value;
+  });
 
   playButton.addEventListener("click", function () {
     togglePlayPause();
