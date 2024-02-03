@@ -19,7 +19,7 @@ header > h4 > a:hover, header > .h4 > a:hover {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 900px;
+  max-width: 1000px;
   height: 500px;
 }
 
