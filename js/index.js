@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const audioPlayer = document.getElementById("audioPlayer");
   const volumeSlider = document.getElementById("volumeSlider");
   const volumeIcon = document.getElementById("volumeIcon");
+  const rewindButton = document.querySelector(".bi-arrow-clockwise");
 
   pauseButton.classList.add("d-none");
 
@@ -42,6 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
   progressBar.addEventListener("touchmove", function (event) {
     if (isDragging) {
       handleTouch(event);
+
+      // Impedisci il comportamento predefinito di trascinamento sulla pagina al drag nel progresso della traccia da mobile
+      event.preventDefault();
     }
   });
 
@@ -104,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
     audioPlayer.currentTime = (percentage / 100) * audioPlayer.duration;
   });
 
-  const rewindButton = document.querySelector(".bi-arrow-clockwise");
   rewindButton.addEventListener("click", function () {
     // Riavvolgi la canzone
     audioPlayer.currentTime = 0;
