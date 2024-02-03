@@ -18,4 +18,20 @@ svg,
   height: 0.8vh;
 }
 
+#progress {
+  background-color: green;
+  position: relative;
+}
+
+#progress::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 10px;
+  background-color: rgb(0, 39, 0);
+}
+
 @import "sass/bootstrap.scss";
