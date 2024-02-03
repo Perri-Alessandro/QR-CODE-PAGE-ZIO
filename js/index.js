@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   pauseButton.classList.add("d-none");
 
   let isPlaying = false;
+  let isDragging = false;
 
   volumeIcon.addEventListener("click", function () {
     volumeSlider.hidden = !volumeSlider.hidden;
@@ -33,6 +34,21 @@ document.addEventListener("DOMContentLoaded", function () {
     togglePlayPause();
   });
 
+  progressBar.addEventListener("touchstart", function (event) {
+    isDragging = true;
+    handleTouch(event);
+  });
+
+  progressBar.addEventListener("touchmove", function (event) {
+    if (isDragging) {
+      handleTouch(event);
+    }
+  });
+
+  progressBar.addEventListener("touchend", function () {
+    isDragging = false;
+  });
+
   function togglePlayPause() {
     if (isPlaying) {
       pauseButton.classList.add("d-none");
@@ -45,6 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     isPlaying = !isPlaying;
+  }
+
+  function handleTouch(event) {
+    const barWidth = progressBar.clientWidth;
+    const touchX =
+      event.touches[0].clientX - progressBar.getBoundingClientRect().left;
+    const percentage = (touchX / barWidth) * 100;
+
+    // Aggiorna il progresso della canzone
+    audioPlayer.currentTime = (percentage / 100) * audioPlayer.duration;
   }
 
   audioPlayer.addEventListener("timeupdate", function () {
