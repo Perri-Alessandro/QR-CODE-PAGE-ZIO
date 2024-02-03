@@ -1,7 +1,7 @@
 function generateQRCode() {
   var textToEncode = "https://perri-alessandro.github.io/QR-CODE-PAGE-ZIO/";
 
-  // Configurazioni opzionali
+  // configurazioni opzionali
   var options = {
     width: 128,
     height: 128,
@@ -10,7 +10,6 @@ function generateQRCode() {
     correctLevel: QRCode.CorrectLevel.H,
   };
 
-  // Creazione del QR code
   var qrcode = new QRCode(document.getElementById("qrcode"), options);
   qrcode.makeCode(textToEncode);
   console.log("OGGETTO QR CODE GENERATO", qrcode);
@@ -31,10 +30,10 @@ function downloadQRCode() {
   ctx.fillStyle = "#ffffff";
   ctx.fillRect(0, 0, borderedCanvas.width, borderedCanvas.height);
 
-  // Disegnare il QR code al centro del nuovo canvas
+  // disegnare il QR code al centro del nuovo canvas
   ctx.drawImage(canvas, borderSize, borderSize);
 
-  // Creare un link di download
+  // creare un link di download
   var downloadLink = document.createElement("a");
   downloadLink.href = borderedCanvas.toDataURL("image/png");
   downloadLink.download = "brano_qr_code.png";
@@ -45,7 +44,6 @@ function downloadQRCode() {
   console.log("QR CODE SCARICATO", downloadLink);
 }
 
-// Chiamata alla funzione per generare il QR code al caricamento della pagina
 generateQRCode();
 
 document
