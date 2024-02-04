@@ -62,6 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
       playButton.classList.add("d-none");
       pauseButton.classList.remove("d-none");
       audioPlayer.play();
+
+      /// Assicurati che l'audio sia completamente caricato prima di riprodurlo,
+      /// per farlo partire automaticamente al caricamento della pagina, come richiesto
+      audioPlayer.addEventListener("canplaythrough", function () {
+        audioPlayer.play();
+      });
     }
 
     isPlaying = !isPlaying;
@@ -114,7 +120,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateProgressBarThumb(0);
   });
-
-  audioPlayer.play();
 });
 /////////////
+
+//////////// GESTIONE DINAMICA DELLA SESSIONE MULTIMEDIALE (RIPRODUZIONE DA BACKGROUND IN MOBILE) PER OGNI PAGINA //////////////////////
+class MediaSessionHandler {
+  constructor(title, artist, album, artworkSrc) {
+    this.title = title;
+    this.artist = artist;
+    this.album = album;
+    this.artworkSrc = artworkSrc;
+  }
+
+  setupMediaSession() {
+    if ("mediaSession" in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: this.title,
+        artist: this.artist,
+        album: this.album,
+        artwork: [{ src: this.artworkSrc, sizes: "96x96", type: "image/jpeg" }],
+      });
+    }
+  }
+}
+
+const mediaSessionData = {
+  "index.html": new MediaSessionHandler(
+    "BACIALA QUESTA TERRA",
+    "Cataldo Perri",
+    "Bastimenti",
+    "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/1b19440f1acec101f1a965e2fe33a9d18a2d6cc5/assets/image/IMG-20240203-WA0016.jpg"
+  ),
+  "ilMioSud.html": new MediaSessionHandler(
+    "IL MIO SUD",
+    "Cataldo Perri",
+    "Guellarè",
+    "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0015.jpg"
+  ),
+  "diCieloEmare.html": new MediaSessionHandler(
+    "DI CIELO E MARE",
+    "Cataldo Perri",
+    "Bastimenti",
+    "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0020.jpg"
+  ),
+  "argentina.html": new MediaSessionHandler(
+    "ARGENTINA",
+    "Cataldo Perri",
+    "Bastimenti",
+    "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0021.jpg"
+  ),
+};
+
+// Ottieni il nome della pagina corrente
+const currentPage = window.location.pathname.split("/").pop();
+
+// Ottieni le informazioni sulla sessione multimediale per la pagina corrente
+const currentMediaSession = mediaSessionData[currentPage];
+
+if (currentMediaSession) {
+  currentMediaSession.setupMediaSession();
+}
+/////////////////////
