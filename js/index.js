@@ -19,10 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let isPlaying = false;
   let isDragging = false;
 
-  volumeSlider.addEventListener("input", function () {
-    audioPlayer.volume = volumeSlider.value;
-  });
-
   volumeIcon.addEventListener("click", function () {
     volumeSlider.hidden = !volumeSlider.hidden;
   });
@@ -41,8 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "touchmove",
     function (event) {
       handleVolumeTouch(event);
-
-      event.preventDefault();
     },
     { passive: false }
   );
@@ -190,19 +184,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const mediaSessionData = {
-    "index.html": new MediaSessionHandler(
+    "bacialaquestaterra.html": new MediaSessionHandler(
       "BACIALA QUESTA TERRA",
       "Cataldo Perri",
       "Bastimenti",
       "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/1b19440f1acec101f1a965e2fe33a9d18a2d6cc5/assets/image/IMG-20240203-WA0016.jpg"
     ),
-    "ilMioSud.html": new MediaSessionHandler(
+    "ilmiosud.html": new MediaSessionHandler(
       "IL MIO SUD",
       "Cataldo Perri",
       "Guellarè",
       "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0015.jpg"
     ),
-    "diCieloEmare.html": new MediaSessionHandler(
+    "dicieloemare.html": new MediaSessionHandler(
       "DI CIELO E MARE",
       "Cataldo Perri",
       "Bastimenti",
