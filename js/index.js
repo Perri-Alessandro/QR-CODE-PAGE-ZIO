@@ -114,5 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateProgressBarThumb(0);
   });
+
+  audioPlayer.play();
 });
 /////////////
