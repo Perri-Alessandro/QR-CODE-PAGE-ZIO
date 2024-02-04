@@ -190,13 +190,13 @@ document.addEventListener("DOMContentLoaded", function () {
       "Bastimenti",
       "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/1b19440f1acec101f1a965e2fe33a9d18a2d6cc5/assets/image/IMG-20240203-WA0016.jpg"
     ),
-    "ilmiosud.html": new MediaSessionHandler(
+    "ilMioSud.html": new MediaSessionHandler(
       "IL MIO SUD",
       "Cataldo Perri",
       "Guellarè",
       "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0015.jpg"
     ),
-    "dicieloemare.html": new MediaSessionHandler(
+    "diCieloEmare.html": new MediaSessionHandler(
       "DI CIELO E MARE",
       "Cataldo Perri",
       "Bastimenti",
