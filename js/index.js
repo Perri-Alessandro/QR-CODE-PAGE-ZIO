@@ -23,6 +23,36 @@ document.addEventListener("DOMContentLoaded", function () {
     volumeSlider.hidden = !volumeSlider.hidden;
   });
 
+  volumeIcon.addEventListener(
+    "touchstart",
+    function (event) {
+      handleVolumeTouch();
+
+      event.preventDefault();
+    },
+    { passive: true }
+  );
+
+  volumeIcon.addEventListener(
+    "touchmove",
+    function (event) {
+      handleVolumeTouch();
+
+      event.preventDefault();
+    },
+    { passive: true }
+  );
+
+  volumeIcon.addEventListener(
+    "touchend",
+    function (event) {
+      handleVolumeTouch();
+
+      event.preventDefault();
+    },
+    { passive: true }
+  );
+
   volumeSlider.addEventListener("input", function () {
     audioPlayer.volume = volumeSlider.value;
   });
@@ -37,14 +67,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   progressBar.addEventListener("touchstart", function (event) {
     isDragging = true;
-    handleTouch(event);
+    if (isPlaying) {
+      handleTouch(event);
+    }
+
+    event.preventDefault();
   });
 
   progressBar.addEventListener("touchmove", function (event) {
     if (isDragging) {
       handleTouch(event);
 
-      // Impedisci il comportamento predefinito di trascinamento sulla pagina al drag nel progresso della traccia da mobile
       event.preventDefault();
     }
   });
@@ -62,12 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
       playButton.classList.add("d-none");
       pauseButton.classList.remove("d-none");
       audioPlayer.play();
-
-      /// Assicurati che l'audio sia completamente caricato prima di riprodurlo,
-      /// per farlo partire automaticamente al caricamento della pagina, come richiesto
-      audioPlayer.addEventListener("canplaythrough", function () {
-        audioPlayer.play();
-      });
     }
 
     isPlaying = !isPlaying;
@@ -81,6 +108,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Aggiorna il progresso della canzone
     audioPlayer.currentTime = (percentage / 100) * audioPlayer.duration;
+  }
+
+  function handleVolumeTouch(event) {
+    const barHeight = volumeSlider.clientHeight;
+    const touchY =
+      event.touches[0].clientY - volumeSlider.getBoundingClientRect().top;
+    const percentage = 100 - (touchY / barHeight) * 100; // Invertito per iniziare dall'alto
+
+    // Aggiorna il volume dell'audioPlayer
+    audioPlayer.volume = percentage / 100;
   }
 
   audioPlayer.addEventListener("timeupdate", function () {
@@ -120,64 +157,66 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateProgressBarThumb(0);
   });
-});
-/////////////
 
-//////////// GESTIONE DINAMICA DELLA SESSIONE MULTIMEDIALE (RIPRODUZIONE DA BACKGROUND IN MOBILE) PER OGNI PAGINA //////////////////////
-class MediaSessionHandler {
-  constructor(title, artist, album, artworkSrc) {
-    this.title = title;
-    this.artist = artist;
-    this.album = album;
-    this.artworkSrc = artworkSrc;
-  }
+  //////////// GESTIONE DINAMICA DELLA SESSIONE MULTIMEDIALE (RIPRODUZIONE DA BACKGROUND IN MOBILE) PER OGNI PAGINA //////////////////////
+  class MediaSessionHandler {
+    constructor(title, artist, album, artworkSrc) {
+      this.title = title;
+      this.artist = artist;
+      this.album = album;
+      this.artworkSrc = artworkSrc;
+    }
 
-  setupMediaSession() {
-    if ("mediaSession" in navigator) {
-      navigator.mediaSession.metadata = new MediaMetadata({
-        title: this.title,
-        artist: this.artist,
-        album: this.album,
-        artwork: [{ src: this.artworkSrc, sizes: "96x96", type: "image/jpeg" }],
-      });
+    setupMediaSession() {
+      if ("mediaSession" in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: this.title,
+          artist: this.artist,
+          album: this.album,
+          artwork: [
+            { src: this.artworkSrc, sizes: "96x96", type: "image/jpeg" },
+          ],
+        });
+      }
     }
   }
-}
 
-const mediaSessionData = {
-  "index.html": new MediaSessionHandler(
-    "BACIALA QUESTA TERRA",
-    "Cataldo Perri",
-    "Bastimenti",
-    "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/1b19440f1acec101f1a965e2fe33a9d18a2d6cc5/assets/image/IMG-20240203-WA0016.jpg"
-  ),
-  "ilMioSud.html": new MediaSessionHandler(
-    "IL MIO SUD",
-    "Cataldo Perri",
-    "Guellarè",
-    "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0015.jpg"
-  ),
-  "diCieloEmare.html": new MediaSessionHandler(
-    "DI CIELO E MARE",
-    "Cataldo Perri",
-    "Bastimenti",
-    "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0020.jpg"
-  ),
-  "argentina.html": new MediaSessionHandler(
-    "ARGENTINA",
-    "Cataldo Perri",
-    "Bastimenti",
-    "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0021.jpg"
-  ),
-};
+  const mediaSessionData = {
+    "index.html": new MediaSessionHandler(
+      "BACIALA QUESTA TERRA",
+      "Cataldo Perri",
+      "Bastimenti",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/1b19440f1acec101f1a965e2fe33a9d18a2d6cc5/assets/image/IMG-20240203-WA0016.jpg"
+    ),
+    "ilMioSud.html": new MediaSessionHandler(
+      "IL MIO SUD",
+      "Cataldo Perri",
+      "Guellarè",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0015.jpg"
+    ),
+    "diCieloEmare.html": new MediaSessionHandler(
+      "DI CIELO E MARE",
+      "Cataldo Perri",
+      "Bastimenti",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0020.jpg"
+    ),
+    "argentina.html": new MediaSessionHandler(
+      "ARGENTINA",
+      "Cataldo Perri",
+      "Bastimenti",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0021.jpg"
+    ),
+  };
 
-// Ottieni il nome della pagina corrente
-const currentPage = window.location.pathname.split("/").pop();
+  // Ottieni il nome della pagina corrente
+  const currentPage = window.location.pathname.split("/").pop();
 
-// Ottieni le informazioni sulla sessione multimediale per la pagina corrente
-const currentMediaSession = mediaSessionData[currentPage];
+  // Ottieni le informazioni sulla sessione multimediale per la pagina corrente
+  const currentMediaSession = mediaSessionData[currentPage];
 
-if (currentMediaSession) {
-  currentMediaSession.setupMediaSession();
-}
-/////////////////////
+  if (currentMediaSession) {
+    currentMediaSession.setupMediaSession();
+  }
+  /////////////////////
+});
+/////////////
