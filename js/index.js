@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let isPlaying = false;
   let isDragging = false;
 
+  volumeSlider.addEventListener("input", function () {
+    audioPlayer.volume = volumeSlider.value;
+  });
+
   volumeIcon.addEventListener("click", function () {
     volumeSlider.hidden = !volumeSlider.hidden;
   });
