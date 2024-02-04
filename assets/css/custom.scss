@@ -61,7 +61,7 @@ svg.bi.bi-arrow-clockwise {
   background-position: center;
   background-repeat: no-repeat;
   max-width: 1000px;
-  height: 400px;
+  height: 450px;
 }
 
 #bgImg3 {
@@ -104,6 +104,48 @@ svg.bi.bi-arrow-clockwise {
   background-repeat: no-repeat;
   max-width: 1000px;
   height: 410px;
+}
+
+#bgImg5 {
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240204-WA0052.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 1000px;
+  height: 490px;
+}
+
+#bgImg6 {
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0) 55%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240204-WA0050.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 900px;
+  height: 550px;
 }
 
 .col-8.progress.rounded-5 {
