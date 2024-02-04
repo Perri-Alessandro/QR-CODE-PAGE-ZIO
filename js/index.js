@@ -35,19 +35,27 @@ document.addEventListener("DOMContentLoaded", function () {
     togglePlayPause();
   });
 
-  progressBar.addEventListener("touchstart", function (event) {
-    isDragging = true;
-    handleTouch(event);
-  });
-
-  progressBar.addEventListener("touchmove", function (event) {
-    if (isDragging) {
+  progressBar.addEventListener(
+    "touchstart",
+    function (event) {
+      isDragging = true;
       handleTouch(event);
+    },
+    { passive: true }
+  );
 
-      // Impedisci il comportamento predefinito di trascinamento sulla pagina al drag nel progresso della traccia da mobile
-      event.preventDefault();
-    }
-  });
+  progressBar.addEventListener(
+    "touchmove",
+    function (event) {
+      if (isDragging) {
+        handleTouch(event);
+
+        // Impedisci il comportamento predefinito di trascinamento sulla pagina al drag nel progresso della traccia da mobile
+        event.preventDefault();
+      }
+    },
+    { passive: true }
+  );
 
   progressBar.addEventListener("touchend", function () {
     isDragging = false;
