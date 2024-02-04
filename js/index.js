@@ -208,6 +208,18 @@ document.addEventListener("DOMContentLoaded", function () {
       "Bastimenti",
       "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0021.jpg"
     ),
+    "lacollinadelvento.html": new MediaSessionHandler(
+      "LA COLLINA DEL VENTO",
+      "Cataldo Perri",
+      "Calarbresh",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240204-WA0052.jpg"
+    ),
+    "andyvaripapa.html": new MediaSessionHandler(
+      "ANDY VARIPAPA",
+      "Cataldo Perri",
+      "Calarbresh",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240204-WA0050.jpg"
+    ),
   };
 
   // Ottieni il nome della pagina corrente
