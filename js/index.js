@@ -26,32 +26,28 @@ document.addEventListener("DOMContentLoaded", function () {
   volumeIcon.addEventListener(
     "touchstart",
     function (event) {
-      handleVolumeTouch();
+      handleVolumeTouch(event);
 
       event.preventDefault();
     },
-    { passive: true }
+    { passive: false }
   );
 
   volumeIcon.addEventListener(
     "touchmove",
     function (event) {
-      handleVolumeTouch();
+      handleVolumeTouch(event);
 
       event.preventDefault();
     },
-    { passive: true }
+    { passive: false }
   );
 
-  volumeIcon.addEventListener(
-    "touchend",
-    function (event) {
-      handleVolumeTouch();
+  volumeIcon.addEventListener("touchend", function (event) {
+    handleVolumeTouch(event);
 
-      event.preventDefault();
-    },
-    { passive: true }
-  );
+    event.preventDefault();
+  });
 
   volumeSlider.addEventListener("input", function () {
     audioPlayer.volume = volumeSlider.value;
@@ -65,22 +61,30 @@ document.addEventListener("DOMContentLoaded", function () {
     togglePlayPause();
   });
 
-  progressBar.addEventListener("touchstart", function (event) {
-    isDragging = true;
-    if (isPlaying) {
-      handleTouch(event);
-    }
-
-    event.preventDefault();
-  });
-
-  progressBar.addEventListener("touchmove", function (event) {
-    if (isDragging) {
-      handleTouch(event);
+  progressBar.addEventListener(
+    "touchstart",
+    function (event) {
+      isDragging = true;
+      if (isPlaying) {
+        handleTouch(event);
+      }
 
       event.preventDefault();
-    }
-  });
+    },
+    { passive: true }
+  );
+
+  progressBar.addEventListener(
+    "touchmove",
+    function (event) {
+      if (isDragging) {
+        handleTouch(event);
+
+        event.preventDefault();
+      }
+    },
+    { passive: true }
+  );
 
   progressBar.addEventListener("touchend", function () {
     isDragging = false;
