@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
     "touchmove",
     function (event) {
       handleVolumeTouch(event);
+
+      event.preventDefault();
     },
     { passive: false }
   );
@@ -66,8 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isPlaying) {
         handleTouch(event);
       }
-
-      event.preventDefault();
     },
     { passive: true }
   );
@@ -77,8 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function (event) {
       if (isDragging) {
         handleTouch(event);
-
-        event.preventDefault();
       }
     },
     { passive: true }
@@ -120,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Aggiorna il volume dell'audioPlayer
     audioPlayer.volume = percentage / 100;
+    volumeSlider.value = audioPlayer.volume;
   }
 
   audioPlayer.addEventListener("timeupdate", function () {
@@ -156,8 +155,6 @@ document.addEventListener("DOMContentLoaded", function () {
   rewindButton.addEventListener("click", function () {
     // Riavvolgi la canzone
     audioPlayer.currentTime = 0;
-
-    updateProgressBarThumb(0);
   });
 
   //////////// GESTIONE DINAMICA DELLA SESSIONE MULTIMEDIALE (RIPRODUZIONE DA BACKGROUND IN MOBILE) PER OGNI PAGINA //////////////////////
