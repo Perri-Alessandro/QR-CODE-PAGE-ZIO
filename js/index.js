@@ -23,15 +23,23 @@ document.addEventListener("DOMContentLoaded", function () {
     volumeSlider.hidden = !volumeSlider.hidden;
   });
 
-  volumeIcon.addEventListener("touchstart", function (event) {
-    handleVolumeTouch(event);
+  volumeIcon.addEventListener(
+    "touchstart",
+    function (event) {
+      handleVolumeTouch(event);
 
-    event.preventDefault();
-  });
+      event.preventDefault();
+    },
+    { passive: false }
+  );
 
-  volumeIcon.addEventListener("touchmove", function (event) {
-    handleVolumeTouch(event);
-  });
+  volumeIcon.addEventListener(
+    "touchmove",
+    function (event) {
+      handleVolumeTouch(event);
+    },
+    { passive: false }
+  );
 
   volumeIcon.addEventListener("touchend", function (event) {
     handleVolumeTouch(event);
