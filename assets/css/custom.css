@@ -28,7 +28,7 @@ svg.bi.bi-arrow-clockwise {
   background-position: center;
   background-repeat: no-repeat;
   max-width: 1000px;
-  height: 440px;
+  height: 500px;
 }
 
 #bgImg2 {
@@ -36,7 +36,6 @@ svg.bi.bi-arrow-clockwise {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 1000px;
   height: 450px;
 }
 
@@ -46,7 +45,7 @@ svg.bi.bi-arrow-clockwise {
   background-position: center;
   background-repeat: no-repeat;
   max-width: 1000px;
-  height: 440px;
+  height: 500px;
 }
 
 #bgImg4 {
@@ -54,7 +53,7 @@ svg.bi.bi-arrow-clockwise {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 1000px;
+  max-width: 680px;
   height: 410px;
 }
 
@@ -63,7 +62,7 @@ svg.bi.bi-arrow-clockwise {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 1000px;
+  max-width: 900px;
   height: 490px;
 }
 
@@ -72,7 +71,7 @@ svg.bi.bi-arrow-clockwise {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  max-width: 900px;
+  max-width: 680px;
   height: 550px;
 }
 
