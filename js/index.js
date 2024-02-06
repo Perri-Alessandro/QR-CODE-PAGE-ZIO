@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Aggiorna il volume dell'audioPlayer
     audioPlayer.volume = percentage / 100;
-    volumeSlider.value = audioPlayer.volume;
+    // volumeSlider.value = audioPlayer.volume;
   }
 
   audioPlayer.addEventListener("timeupdate", function () {
