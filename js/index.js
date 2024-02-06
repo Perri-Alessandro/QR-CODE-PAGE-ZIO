@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     volumeSlider.hidden = !volumeSlider.hidden;
   });
 
-  volumeIcon.addEventListener(
+  volumeSlider.addEventListener(
     "touchstart",
     function (event) {
       handleVolumeTouch(event);
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { passive: false }
   );
 
-  volumeIcon.addEventListener(
+  volumeSlider.addEventListener(
     "touchmove",
     function (event) {
       handleVolumeTouch(event);
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { passive: false }
   );
 
-  volumeIcon.addEventListener("touchend", function (event) {
+  volumeSlider.addEventListener("touchend", function (event) {
     handleVolumeTouch(event);
 
     event.preventDefault();
