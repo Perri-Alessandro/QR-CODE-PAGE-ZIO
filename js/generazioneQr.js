@@ -1,5 +1,6 @@
 function generateQRCode() {
-  var textToEncode = "https://perri-alessandro.github.io/QR-CODE-PAGE-ZIO/";
+  var textToEncode =
+    "https://qrcode-music-cataldo-perri.vercel.app/lacollinadelvento.html";
 
   // configurazioni opzionali
   var options = {
