@@ -217,6 +217,34 @@ document.addEventListener("DOMContentLoaded", function () {
       "Calarbresh",
       "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240204-WA0050.jpg"
     ),
+
+    "tarabella.html": new MediaSessionHandler(
+      "TARABELLA",
+      "Cataldo Perri",
+      "Guellarè",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240204-WA0050.jpg"
+    ),
+
+    "lauraeilsultano.html": new MediaSessionHandler(
+      "LAURA E IL SULTANO",
+      "Cataldo Perri",
+      "Rotte Saracene",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/1b19440f1acec101f1a965e2fe33a9d18a2d6cc5/assets/image/IMG-20240203-WA0016.jpg"
+    ),
+
+    "ionio.html": new MediaSessionHandler(
+      "IONIO",
+      "Cataldo Perri",
+      "Rotte Saracene",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0020.jpg"
+    ),
+
+    "giochid'alba.html": new MediaSessionHandler(
+      "GIOCHI D'ALBA",
+      "Cataldo Perri",
+      "Bastimenti",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0015.jpg"
+    ),
   };
 
   // Ottieni il nome della pagina corrente
