@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "IONIO",
       "Cataldo Perri",
       "Rotte Saracene",
-      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0020.jpg"
+      "https://raw.githubusercontent.com/Perri-Alessandro/QrCode_Music_Cataldo-Perri/main/assets/image/IMG-20240212-WA0012.jpg"
     ),
 
     "giochid'alba.html": new MediaSessionHandler(
@@ -244,6 +244,24 @@ document.addEventListener("DOMContentLoaded", function () {
       "Cataldo Perri",
       "Bastimenti",
       "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240203-WA0015.jpg"
+    ),
+    "ilballotondo.html": new MediaSessionHandler(
+      "IL BALLO TONDO",
+      "Cataldo Perri",
+      "Calarbresh",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QrCode_Music_Cataldo-Perri/main/assets/image/IMG-20240212-WA0011.jpg"
+    ),
+    "buenosaires.html": new MediaSessionHandler(
+      "BUENOS AIRES",
+      "Cataldo Perri",
+      "Bastimenti",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QrCode_Music_Cataldo-Perri/main/assets/image/IMG-20240212-WA0010.jpg"
+    ),
+    "dayhospitalhotel.html": new MediaSessionHandler(
+      "DAY HOSPITAL HOTEL",
+      "Cataldo Perri",
+      "Singolo 2022",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QrCode_Music_Cataldo-Perri/main/assets/image/IMG-20240212-WA0010.jpg"
     ),
   };
 
