@@ -23,31 +23,31 @@ document.addEventListener("DOMContentLoaded", function () {
     volumeSlider.hidden = !volumeSlider.hidden;
   });
 
-  volumeIcon.addEventListener(
-    "touchstart",
-    function (event) {
-      handleVolumeTouch(event);
+  // volumeIcon.addEventListener(
+  //   "touchstart",
+  //   function (event) {
+  //     handleVolumeTouch(event);
 
-      event.preventDefault();
-    },
-    { passive: false }
-  );
+  //     event.preventDefault();
+  //   },
+  //   { passive: false }
+  // );
 
-  volumeIcon.addEventListener(
-    "touchmove",
-    function (event) {
-      handleVolumeTouch(event);
+  // volumeIcon.addEventListener(
+  //   "touchmove",
+  //   function (event) {
+  //     handleVolumeTouch(event);
 
-      event.preventDefault();
-    },
-    { passive: false }
-  );
+  //     event.preventDefault();
+  //   },
+  //   { passive: false }
+  // );
 
-  volumeIcon.addEventListener("touchend", function (event) {
-    handleVolumeTouch(event);
+  // volumeIcon.addEventListener("touchend", function (event) {
+  //   handleVolumeTouch(event);
 
-    event.preventDefault();
-  });
+  //   event.preventDefault();
+  // });
 
   volumeSlider.addEventListener("input", function () {
     audioPlayer.volume = volumeSlider.value;
@@ -110,16 +110,16 @@ document.addEventListener("DOMContentLoaded", function () {
     audioPlayer.currentTime = (percentage / 100) * audioPlayer.duration;
   }
 
-  function handleVolumeTouch(event) {
-    const barHeight = volumeSlider.clientHeight;
-    const touchY =
-      event.touches[0].clientY - volumeSlider.getBoundingClientRect().top;
-    const percentage = 100 - (touchY / barHeight) * 100; // Invertito per iniziare dall'alto
+  // function handleVolumeTouch(event) {
+  //   const barHeight = volumeSlider.clientHeight;
+  //   const touchY =
+  //     event.touches[0].clientY - volumeSlider.getBoundingClientRect().top;
+  //   const percentage = 100 - (touchY / barHeight) * 100; // Invertito per iniziare dall'alto
 
-    // Aggiorna il volume dell'audioPlayer
-    audioPlayer.volume = percentage / 100;
-    // volumeSlider.value = audioPlayer.volume;
-  }
+  //   // Aggiorna il volume dell'audioPlayer
+  //   audioPlayer.volume = percentage / 100;
+  //   // volumeSlider.value = audioPlayer.volume;
+  // }
 
   audioPlayer.addEventListener("timeupdate", function () {
     const percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
