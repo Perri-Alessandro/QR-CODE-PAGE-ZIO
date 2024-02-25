@@ -280,16 +280,20 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("DOMContentLoaded", function () {
     const volumeIcon = document.getElementById("volumeIcon");
 
-    if (isIOS()) {
-      if (volumeIcon) {
-        volumeIcon.style.visibility = "hidden";
-      }
+    // Funzione per controllare se il dispositivo è iOS
+    function isIOS() {
+      const iOS_1to12 = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      const iOS13_iPad =
+        navigator.userAgent === "MacIntel" && navigator.maxTouchPoints > 1;
+
+      return !window.MSStream && (iOS_1to12 || iOS13_iPad);
+    }
+
+    // Nascondi l'icona del volume se il dispositivo è iOS mobile
+    if (isIOS() && volumeIcon) {
+      volumeIcon.style.visibility = "hidden";
     }
   });
-
-  function isIOS() {
-    return /iOS/.test(navigator.userAgent) && !window.MSStream;
-  }
 
   ///////////
 });
