@@ -1,6 +1,6 @@
 function generateQRCode() {
   var textToEncode =
-    "https://qrcode-music-cataldo-perri.vercel.app/lacollinadelvento.html";
+    "https://qrcode-music-cataldo-perri.vercel.app/tarabella.html";
 
   // configurazioni opzionali
   var options = {
