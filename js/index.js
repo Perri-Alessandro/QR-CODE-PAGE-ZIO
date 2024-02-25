@@ -275,5 +275,21 @@ document.addEventListener("DOMContentLoaded", function () {
     currentMediaSession.setupMediaSession();
   }
   /////////////////////
+
+  /////////////////////////////IOS TRUE? VOLUME ICON OPACITY 0
+  document.addEventListener("DOMContentLoaded", function () {
+    const volumeIcon = document.getElementById("volumeIcon");
+
+    if (isIOS()) {
+      if (volumeIcon) {
+        volumeIcon.style.opacity = 0;
+      }
+    }
+  });
+
+  function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  }
+  ///////////
 });
 /////////////

@@ -51,7 +51,7 @@ svg.bi.bi-arrow-clockwise {
   background-position: center;
   background-repeat: no-repeat;
   max-width: 1000px;
-  height: 500px;
+  height: 400px;
 }
 
 #bgImg4 {
@@ -60,7 +60,7 @@ svg.bi.bi-arrow-clockwise {
   background-position: center;
   background-repeat: no-repeat;
   max-width: 680px;
-  height: 650px;
+  height: 450px;
 }
 
 #bgImg5 {
@@ -78,7 +78,7 @@ svg.bi.bi-arrow-clockwise {
   background-position: center;
   background-repeat: no-repeat;
   max-width: 650px;
-  height: 500px;
+  height: 400px;
 }
 
 #bgImg7 {
@@ -87,7 +87,7 @@ svg.bi.bi-arrow-clockwise {
   background-position: center;
   background-repeat: no-repeat;
   max-width: 650px;
-  height: 430px;
+  height: 400px;
 }
 
 #bgImg8 {
@@ -96,11 +96,25 @@ svg.bi.bi-arrow-clockwise {
   background-position: center;
   background-repeat: no-repeat;
   max-width: 650px;
-  height: 610px;
+  height: 500px;
 }
 @media screen and (min-width: 490px) {
   #bgImg8 {
     height: 800px;
+  }
+}
+
+#bgImg9 {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 55%, rgb(0, 0, 0) 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 55%, rgb(0, 0, 0) 100%), url("https://raw.githubusercontent.com/Perri-Alessandro/QrCode_Music_Cataldo-Perri/main/assets/image/IMG-20240204-WA0051.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  max-width: 650px;
+  height: 350px;
+}
+@media screen and (min-width: 490px) {
+  #bgImg9 {
+    height: 600px;
   }
 }
 
