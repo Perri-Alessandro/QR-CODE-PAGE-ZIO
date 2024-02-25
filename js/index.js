@@ -282,16 +282,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Funzione per controllare se il dispositivo è iOS
     function isIOS() {
-      const iOS_1to12 = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      const iOS13_iPad =
-        navigator.userAgent === "MacIntel" && navigator.maxTouchPoints > 1;
-
-      return !window.MSStream && (iOS_1to12 || iOS13_iPad);
+      const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      return iOS;
     }
 
     // Nascondi l'icona del volume se il dispositivo è iOS mobile
     if (isIOS() && volumeIcon) {
-      volumeIcon.style.visibility = "hidden";
+      volumeIcon.style.display = "none";
     }
   });
 
