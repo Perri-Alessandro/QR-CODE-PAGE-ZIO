@@ -276,20 +276,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   /////////////////////
 
-  /////////////////////////////IOS TRUE? VOLUME ICON OPACITY 0
+  /////////////////////////////IOS TRUE? VOLUME ICON HIDDEN
   document.addEventListener("DOMContentLoaded", function () {
     const volumeIcon = document.getElementById("volumeIcon");
 
     if (isIOS()) {
       if (volumeIcon) {
-        volumeIcon.style.opacity = 0;
+        volumeIcon.style.visibility = "hidden";
       }
     }
   });
 
   function isIOS() {
-    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    return /iOS/.test(navigator.userAgent) && !window.MSStream;
   }
+
   ///////////
 });
 /////////////
