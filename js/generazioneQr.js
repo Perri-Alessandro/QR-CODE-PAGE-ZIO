@@ -1,5 +1,6 @@
 function generateQRCode() {
-  var textToEncode = "https://qrcode-music-cataldo-perri.vercel.app/mare.html";
+  var textToEncode =
+    "https://qrcode-music-cataldo-perri.vercel.app/tarantelladicariati.html";
 
   // configurazioni opzionali
   var options = {
