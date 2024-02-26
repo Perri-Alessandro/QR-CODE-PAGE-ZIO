@@ -263,6 +263,24 @@ document.addEventListener("DOMContentLoaded", function () {
       "Singolo 2022",
       "https://raw.githubusercontent.com/Perri-Alessandro/QrCode_Music_Cataldo-Perri/main/assets/image/IMG-20240212-WA0010.jpg"
     ),
+    "tarantelladicariati.html": new MediaSessionHandler(
+      "TARANTELLA DI CARIATI",
+      "Cataldo Perri",
+      "Rotte Saracene - Opera Teatrale Musicale 'Laura E Il Sultano'",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QrCode_Music_Cataldo-Perri/main/assets/image/IMG-20240212-WA0010.jpg"
+    ),
+    "brizadicalabria.html": new MediaSessionHandler(
+      "BRIZA DI CALABRIA",
+      "Cataldo Perri",
+      "Bastimenti",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QrCode_Music_Cataldo-Perri/main/assets/image/IMG-20240212-WA0010.jpg"
+    ),
+    "iltempoeilpudore.html": new MediaSessionHandler(
+      "IL TEMPO E IL PUDORE",
+      "Cataldo Perri",
+      "Guellarè",
+      "https://raw.githubusercontent.com/Perri-Alessandro/QR-CODE-PAGE-ZIO/main/assets/image/IMG-20240204-WA0050.jpg"
+    ),
   };
 
   // Ottieni il nome della pagina corrente
