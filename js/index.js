@@ -294,21 +294,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   /////////////////////
 
-  /////////////////////////////IOS TRUE? VOLUME ICON HIDDEN
-  document.addEventListener("DOMContentLoaded", function () {
-    const volumeIcon = document.getElementById("volumeIcon");
+  // /////////////////////////////IOS TRUE? VOLUME ICON HIDDEN
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   const volumeIcon = document.getElementById("volumeIcon");
 
-    // Funzione per controllare se il dispositivo è iOS
-    function isIOS() {
-      const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      return iOS;
-    }
+  //   // Funzione per controllare se il dispositivo è iOS
+  //   function isIOS() {
+  //     const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  //     return iOS;
+  //   }
 
-    // Nascondi l'icona del volume se il dispositivo è iOS mobile
-    if (isIOS() && volumeIcon) {
-      volumeIcon.style.display = "none";
-    }
-  });
+  //   // Nascondi l'icona del volume se il dispositivo è iOS mobile
+  //   if (isIOS() && volumeIcon) {
+  //     volumeIcon.style.display = "none";
+  //   }
+  // });
 
   ///////////
 });

@@ -19,9 +19,10 @@ header > h4 > strong > a, header > .h4 > strong > a {
   color: white;
   transition: transform 0.4s ease;
   font-style: italic;
+  transition: color 0.4s ease;
 }
 header > h4 > strong > a:hover, header > .h4 > strong > a:hover {
-  color: white;
+  color: green;
 }
 
 svg.bi.bi-arrow-clockwise {
